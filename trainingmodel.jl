@@ -8,8 +8,10 @@ using ScikitLearn, RDatasets, DataFrames, CSV
 
 # Assign model and load data
 trainer = LogisticRegression(fit_intercept=true)
-news = CSV.read("C:\\Users\\Dom\\Desktop\\School\\PsychoModel\\news50.csv", DataFrame)
-psycho = CSV.read("C:\\Users\\Dom\\Desktop\\School\\PsychoModel\\psycho50.csv", DataFrame)
+
+news = CSV.read(joinpath(pwd(),"news50.csv"), DataFrame)
+
+psycho = CSV.read(joinpath(pwd(),"psycho50.csv"), DataFrame)
 
 # Add targets to DataFrames
 news[!, :target] .= "normal"
